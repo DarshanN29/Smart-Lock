@@ -18,12 +18,20 @@ class DashboardScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         children: [
           // ------------------------------------
-          // Profile Section
+          // Profile Section (MODIFIED ICON)
           // ------------------------------------
           Card(
             elevation: 2,
             child: ListTile(
-              leading: const Icon(Icons.person, size: 40, color: Colors.blueGrey),
+              // 💡 MODIFIED: Replaced the leading icon with a standard default user avatar (CircleAvatar with Icons.person)
+              leading: const CircleAvatar(
+                backgroundColor: Colors.grey, // Standard grey background
+                child: Icon(
+                  Icons.person,
+                  size: 28,
+                  color: Colors.white, // White person icon
+                ),
+              ),
               title: const Text("User Profile"),
               subtitle: const Text("Manage your account and settings"),
               trailing: const Icon(Icons.arrow_forward_ios),
@@ -34,7 +42,7 @@ class DashboardScreen extends StatelessWidget {
           ),
           const Divider(),
           // ------------------------------------
-          // Locks Section (Main Feature)
+          // Locks Section (Existing Logic)
           // ------------------------------------
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
