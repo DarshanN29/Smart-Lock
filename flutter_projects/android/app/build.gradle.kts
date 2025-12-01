@@ -11,12 +11,15 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+        // Enable desugaring for Java 8+ features (from previous fix)
+        isCoreLibraryDesugaringEnabled = true 
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        // 💡 FIX: Set jvmTarget to 1.8 to match Java source and target compatibility
+        jvmTarget = JavaVersion.VERSION_1_8.toString() 
     }
 
     defaultConfig {
@@ -41,4 +44,9 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Desugaring library dependency (from previous fix)
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
