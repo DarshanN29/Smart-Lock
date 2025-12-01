@@ -1,0 +1,21 @@
+name: smartlock_app
+description: SmartLock app (BLE + QR + Ed25519)
+publish_to: "none"
+version: 0.0.1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"  # adjust to your Flutter/Dart SDK
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_blue_plus: ^2.0.2
+  qr_flutter: 4.1.0
+  cryptography: ^2.0.0
+  flutter_secure_storage: ^9.2.4
+  local_auth: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
